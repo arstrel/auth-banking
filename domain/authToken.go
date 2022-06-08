@@ -1,8 +1,8 @@
 package domain
 
 import (
-	"github.com/arstrel/rest-banking/rest/errs"
-	"github.com/arstrel/rest-banking/rest/logger"
+	"github.com/arstrel/rest-banking/errs"
+	"github.com/arstrel/rest-banking/logger"
 	"github.com/golang-jwt/jwt"
 )
 
