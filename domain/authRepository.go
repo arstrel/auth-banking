@@ -10,7 +10,7 @@ import (
 
 type AuthRepository interface {
 	FindBy(username string, password string) (*Login, *errs.AppError)
-	GenerateAndSaveRefreshTikenToStore(authToken AuthToken) (string, *errs.AppError)
+	GenerateAndSaveRefreshTokenToStore(authToken AuthToken) (string, *errs.AppError)
 	RefreshTokenExists(refreshToken string) *errs.AppError
 }
 
@@ -34,7 +34,7 @@ func (d AuthRepositoryDb) RefreshTokenExists(refreshToken string) *errs.AppError
 	return nil
 }
 
-func (d AuthRepositoryDb) GenerateAndSaveRefreshTikenToStore(authToken AuthToken) (string, *errs.AppError) {
+func (d AuthRepositoryDb) GenerateAndSaveRefreshTokenToStore(authToken AuthToken) (string, *errs.AppError) {
 	// generate the refresh token
 	var appErr *errs.AppError
 	var refreshToken string
