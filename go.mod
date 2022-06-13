@@ -3,7 +3,7 @@ module github.com/arstrel/rest-banking/auth
 go 1.18
 
 require (
-	github.com/arstrel/rest-banking v0.0.0-20220608040458-d135a9a6d9e6 // indirect
+	github.com/arstrel/rest-banking v0.0.0-20220610040447-c931364b4571 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect

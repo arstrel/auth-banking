@@ -53,7 +53,7 @@ func (d AuthRepositoryDb) GenerateAndSaveRefreshTokenToStore(authToken AuthToken
 }
 
 func (d AuthRepositoryDb) FindBy(username, password string) (*Login, *errs.AppError) {
-	var login login
+	var login Login
 	sqlVerify := `SELECT username, u.customer_id, role, group_concat(a.account_id) as account_numbers FROM users u
 						LEFT JOIN accounts a ON a.customer_id = u.customer_id
 						WHERE username = ? and password = ?

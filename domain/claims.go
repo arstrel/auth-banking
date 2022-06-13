@@ -35,7 +35,7 @@ func (c AccessTokenClaims) IsValidCustomerId(customerId string) bool {
 	return c.CustomerId == customerId
 }
 
-func (c AccessTokenClaims) IsValidAccoundId(accountId string) bool {
+func (c AccessTokenClaims) IsValidAccountId(accountId string) bool {
 	if accountId != "" {
 		accountFound := false
 		for _, a := range c.Accounts {
@@ -45,6 +45,17 @@ func (c AccessTokenClaims) IsValidAccoundId(accountId string) bool {
 			}
 		}
 		return accountFound
+	}
+	return true
+}
+
+func (c AccessTokenClaims) IsRequestVerifiedWithTokenClaims(urlParams map[string]string) bool {
+	if c.CustomerId != urlParams["customer_id"] {
+		return false
+	}
+
+	if !c.IsValidAccountId(urlParams["account_id"]) {
+		return false
 	}
 	return true
 }
