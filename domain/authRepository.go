@@ -5,6 +5,7 @@ import (
 
 	"github.com/arstrel/rest-banking/errs"
 	"github.com/arstrel/rest-banking/logger"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 )
 
